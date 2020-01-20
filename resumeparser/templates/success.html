@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+  <title>Resume</title>
+</head>
+<body>
+
+  <style>
+  
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  height: 100%;  
+}
+
+body {
+  min-height: 100%;  
+  background: #eee;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  color: #222;
+  font-size: 14px;
+  line-height: 26px;
+  padding-bottom: 50px;
+}
+
+.container {
+  max-width: 700px;   
+  background: #fff;
+  margin: 0px auto 0px; 
+  box-shadow: 1px 1px 2px #DAD7D7;
+  border-radius: 3px;  
+  padding: 40px;
+  margin-top: 50px;
+}
+
+.header {
+  margin-bottom: 30px;
+} 
+.header .full-name {
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  
+.header  .first-name {
+    font-weight: 700;
+  }
+  
+.header  .last-name {
+    font-weight: 300;
+  }
+  
+.header  .contact-info {
+    margin-bottom: 20px;
+  }
+  
+ .header .email ,
+  .phone {
+    color: #999;
+    font-weight: 300;
+  } 
+  
+ .header .separator {
+    height: 10px;
+    display: inline-block;
+    border-left: 2px solid #999;
+    margin: 0px 10px;
+  }
+  
+ .header .position {
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 10px;
+    text-decoration: underline;
+  }
+
+
+.details {
+  line-height: 20px;
+} 
+ .details .section {
+    margin-bottom: 40px;  
+  }
+  
+ .details .section:last-of-type {
+    margin-bottom: 0px;  
+  }
+  
+ .details .section__title {
+    letter-spacing: 2px;
+    color: #54AFE4;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  
+  .details.section__list-item {
+    margin-bottom: 40px;
+  }
+  
+  .details.section__list-item:last-of-type {
+    margin-bottom: 0;
+  }
+  
+  .details.left ,
+  .right {
+    vertical-align: top;
+    display: inline-block;
+  }
+  
+ .details .left {
+    width: 60%;    
+  }
+  
+  .details.right {
+    text-align: right;
+    width: 39%;    
+  }
+  
+  .details.name {
+    font-weight: bold;
+  }
+  
+  .details a {
+    text-decoration: none;
+    color: #000;
+    font-style: italic;
+  }
+  
+  .details a:hover {
+    text-decoration: underline;
+    color: #000;
+  }
+  
+    
+ .details .skills__item {
+    margin-bottom: 10px;  
+  }
+  
+  .skills__item .right input {
+      display: none;
+    }
+    
+    .skills__item .right  label {
+      display: inline-block;  
+      width: 20px;
+      height: 20px;
+      background: #C3DEF3;
+      border-radius: 20px;
+      margin-right: 3px;
+    }
+    
+    .skills__item .right  input:checked + label {
+      background: #79A9CE;
+    }
+
+
+
+
+
+
+
+
+
+
+
+  </style>
+
+
+<!-- <h1>Resume</h1> -->
+
+<div class="container">
+  <div class="header">
+      <!-- <span class="last-name">Doe</span> -->
+    </div>
+    <div class="contact-info">
+      <span class="email">Email: </span>
+      <span class="email-val">{{ email }}</span>
+      <span class="separator">|</span>
+      <span class="phone">Phone: </span>
+      <span class="phone-val">{{ mobno }}</span>
+    </div>
+    
+
+ 
+   <div class="details">
+    <div class="section">
+      <div class="section__title">Personal Information</div>
+      <div class="section__list">
+
+        {{pinfo}}
+
+      </div>
+    </div>
+
+    <div class="about">
+        <div class="section">
+        <div class="section__title">Career Objective</div>
+        <div class="section__list">
+
+          {{ obj }}
+
+        </div> 
+      </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="section">
+      <div class="section__title">Education</div>
+      <div class="section__list">
+        <div class="section__list-item">
+          <!-- <div class="left">
+            <div class="name">Sample Institute of technology</div>
+            <div class="addr">San Fr, CA</div>
+            <div class="duration">Jan 2011 - Feb 2015</div>
+          </div>
+          <div class="right">
+            <div class="name">Fr developer</div>
+            <div class="desc">did This and that</div>
+          </div> -->
+          {{ edu }}
+        </div>
+        <!-- <div class="section__list-item">
+          <div class="left">
+            <div class="name">Akount</div>
+            <div class="addr">San Monica, CA</div>
+            <div class="duration">Jan 2011 - Feb 2015</div>
+          </div>
+          <div class="right">
+            <div class="name">Fr developer</div>
+            <div class="desc">did This and that</div>
+          </div>
+        </div> -->
+
+      </div>
+      
+  </div>
+     <div class="section">
+      <div class="section__title">Projects</div> 
+       <div class="section__list">
+        {{ projects }}
+       </div>
+    </div>
+     <div class="section">
+       <div class="section__title">Skills</div>
+       <div class="skills">
+        {{ skills }}
+         </div>
+         
+       </div>
+       <!-- <div class="section">
+        <div class="section__title">
+          Projects
+          </div>
+          <div class="section__list">
+            <div class="section__list-item">
+                {{ projects }}
+             </div>
+          </div>
+        </div> -->
+       <div class="section">
+        <div class="section__title">
+          Achievements
+          </div>
+          <div class="section__list">
+            <div class="section__list-item">
+                {{ achieve }}
+             </div>
+          </div>
+        </div>
+     <div class="section">
+     <div class="section__title">
+       Interests
+       </div>
+       <div class="section__list">
+         <div class="section__list-item">
+            {{ hobbies }}
+          </div>
+       </div>
+     </div>
+     </div>
+  </div>
+</div>
+</div>
+
+</body>
+</html>
+
+
+
+<!-- <h1 style="text-align: center">your resume has been uploaded successfully...</h1>
+<h1 style="text-align: center">and all the details are uploaded to database successfully...</h1> -->
+<!-- <h2>Mobile No..</h2>
+<p>{{ mobno }}</p>
+<h2>Email..</h2>
+<p>{{ email }}</p>
+<h2>Personal info..</h2>
+<p>{{ pinfo }}</p>
+<h2>Career Objective</h2>
+<p>{{ obj }}</p>
+<h2>Education..</h2>
+<p>{{ edu }}</p>
+<h2>Your Skills..</h2>
+<p>{{ skills }}</p>
+<h2>Achievements..</h2>
+<p>{{ achieve }}</p>
+<h2>Projects....</h2>
+<p>{{ projects }}</p>
+<h2>Extra Curricular Activiteies..</h2>
+<p>{{ hobbies }}</p> -->
